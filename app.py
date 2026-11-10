@@ -5,7 +5,6 @@ from database import executar_select
 
 app = Flask(__name__)
 
-
 @app.route("/", methods=["GET"])
 def inicio():
     return render_template("index.html")
@@ -48,5 +47,9 @@ def primeira_fase_post():
             sql=sql,
             mensagem=mensagem
         )
+
+@app.route("/segunda_fase", methods=["GET"])
+def primeira_fase_get():
+    return render_template("segunda_fase.html")
 
 app.run(debug=True)
